@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VIT Pune Clubs</title>
+
+    <style>
+
+	.header-content {
+   		 display: flex;
+		 align-items: center;
+    		justify-content: center;
+    		gap: 20px;
+    		margin-bottom: 20px;
+	}
+
+	.logo {
+    		width: 100px;
+   		 height: 100px;
+   		 object-fit: contain;
+  		 border-radius: 50%;
+    		background: white;
+	}
+
+	.heading {
+    		text-align: left;
+	}
+
+	.heading h1 {
+		margin: 0 0 8px;
+        }
+
+	.heading p {
+   		 margin: 0;
+	}
+
+	#search {
+    		width: 80%;
+    		max-width: 400px;
+    		box-sizing: border-box;
+		} 
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f2f4f8;
+            color: #222;
+        }
+
+        header {
+            background: #264653;
+            color: white;
+            text-align: center;
+            padding: 30px 10px;
+        }
+
+        input {
+            padding: 12px;
+            width: 80%;
+            max-width: 400px;
+            border-radius: 20px;
+            border: 2px solid #e9c46a;
+        }
+
+        .buttons {
+            text-align: center;
+            margin: 20px;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 20px;
+            background: #2a9d8f;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #e76f51;
+        }
+
+
+        #cards {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(240px, 1fr));
+            gap: 15px;
+            max-width: 1000px;
+            margin: auto;
+            padding: 15px;
+        }
+
+        .card {
+            background: white;
+            padding: 18px;
+            border-radius: 10px;
+            border-top: 5px solid #2a9d8f;
+            box-shadow: 0 2px 5px #ccc;
+        }
+
+        .card h2 {
+            color: #264653;
+        }
+
+        .category {
+            color: #e76f51;
+            font-weight: bold;
+        }
+
+        summary {
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        #empty {
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+    <div class="header-content">
+    <img src="D:\Siddhi Irnak Documents\club logo.jpeg" alt="VIT Clubs Logo" class="logo">
+
+        <div class="heading">
+            <h1>VIT Pune Clubs</h1>
+            <p>Explore clubs. Discover your interests.</p>
+        </div>
+    </div>
+
+    <input type="text" id="search" placeholder="Search for a club...">
+
+    </header>
+
+    <div class="buttons">
+        <button onclick="showClubs('All')">All</button>
+        <button onclick="showClubs('Technical')">Technical</button>
+        <button onclick="showClubs('Cultural')">Cultural</button>
+        <button onclick="showClubs('Others')">Others</button>
+        <button onclick="showClubs('Sports')">Sports</button>
+    </div>
+
+    <div id="cards">
+
+        <div class="card" data-cat="Technical">
+            <h2>Google Developer Groups on Campus</h2>
+            <p class="category">Technical</p>
+            <p>Explore software development and modern technologies.</p>
+            <details>
+                <summary>More information</summary>
+                <p>Suitable for students interested in coding,
+                technology and collaborative projects.</p>
+            </details>
+        </div>
+
+        <div class="card" data-cat="Technical">
+            <h2>Microsoft Learn Students Club</h2>
+            <p class="category">Technical</p>
+            <p>Learn about Microsoft technologies and digital skills.</p>
+            <details>
+                <summary>More information</summary>
+                <p>Explore technical learning, workshops and
+                technology-based activities.</p>
+            </details>
+        </div>
+
+        <div class="card" data-cat="Technical">
+            <h2>The Robotics Forum</h2>
+            <p class="category">Technical</p>
+            <p>Explore robotics, automation and practical engineering.</p>
+            <details>
+                <summary>More information</summary>
+                <p>For students interested in robots,
+                hardware and engineering projects.</p>
+            </details>
+        </div>
+
+        <div class="card" data-cat="Technical">
+            <h2>The Ideator Club</h2>
+            <p class="category">Technical</p>
+            <p>Explore innovative ideas and problem-solving.</p>
+            <details>
+                <summary>More information</summary>
+                <p>Develop ideas and explore solutions to
+                real-world problems.</p>
+            </details>
+        </div>
+
+        <div class="card" data-cat="Technical">
+            <h2>IOT Club</h2>
+            <p class="category">Technical</p>
+            <p>Explore connected devices, sensors and IoT projects.</p>
+            <details>
+                <summary>More information</summary>
+                <p>Learn about smart devices and systems
+                that communicate through the internet.</p>
+            </details>
+        </div>
+
+        <div class="card" data-cat="Technical">
+            <h2>Cyber Cell VIT</h2>
+            <p class="category">Technical</p>
+            <p>Explore cybersecurity and digital safety.</p>
+            <details>
+                <summary>More information</summary>
+                <p>Learn about computer security,
+                cyber awareness and digital protection.</p>
+            </details>
+        </div>
+
+        <div class="card" data-cat="Cultural">
+            <h2>Zephyr</h2>
+            <p class="category">Cultural</p>
+            <p>Discover cultural activities and student creativity.</p>
+            <details>
+                <summary>More information</summary>
+                <p>Explore opportunities to participate in
+                cultural activities and college events.</p>
+            </details>
+        </div>
+
+        <div class="card" data-cat="Cultural">
+            <h2>Rangmanch</h2>
+            <p class="category">Cultural</p>
+            <p>Explore stage performances and artistic expression.</p>
+            <details>
+                <summary>More information</summary>
+                <p>A club name associated with the performing
+                arts and creative expression.</p>
+            </details>
+        </div>
+
+        <div class="card" data-cat="Cultural">
+            <h2>Aaroh</h2>
+            <p class="category">Cultural</p>
+            <p>Explore creative and cultural activities.</p>
+            <details>
+                <summary>More information</summary>
+                <p>Check the club's official announcements
+                for its activities and events.</p>
+            </details>
+        </div>
+
+        <div class="card" data-cat="Cultural">
+            <h2>Avishkar</h2>
+            <p class="category">Cultural</p>
+            <p>Discover student creativity and expression.</p>
+            <details>
+                <summary>More information</summary>
+                <p>Explore the club's current events
+                and participation opportunities.</p>
+            </details>
+        </div>
+
+        <div class="card" data-cat="Others">
+            <h2>VishwaConclave</h2>
+            <p class="category">Others</p>
+            <p>Explore student-led events and discussions.</p>
+            <details>
+                <summary>More information</summary>
+                <p>Check official club announcements for
+                upcoming activities and events.</p>
+            </details>
+        </div>
+
+        <div class="card" data-cat="Others">
+            <h2>Reading Club</h2>
+            <p class="category">Others</p>
+            <p>Explore books, reading and shared learning.</p>
+            <details>
+                <summary>More information</summary>
+                <p>A place to explore reading interests
+                and exchange ideas about books.</p>
+            </details>
+        </div>
+
+        <div class="card" data-cat="Others">
+            <h2>Vclick Multimedia Production</h2>
+            <p class="category">Others</p>
+            <p>Explore multimedia and creative content production.</p>
+            <details>
+                <summary>More information</summary>
+                <p>Discover creative media and production activities.</p>
+            </details>
+        </div>
+
+        <div class="card" data-cat="Others">
+            <h2>The Speakers Club</h2>
+            <p class="category">Others</p>
+            <p>Develop communication and public speaking skills.</p>
+            <details>
+                <summary>More information</summary>
+                <p>Explore speaking, presentations and
+                confidence-building activities.</p>
+            </details>
+        </div>
+
+        <div class="card" data-cat="Others">
+            <h2>Rotaract Club</h2>
+            <p class="category">Others</p>
+            <p>Explore community service and social initiatives.</p>
+            <details>
+                <summary>More information</summary>
+                <p>Learn about volunteering and
+                community-focused activities.</p>
+            </details>
+        </div>
+
+        <div class="card" data-cat="Others">
+            <h2>Model United Nations Society</h2>
+            <p class="category">Others</p>
+            <p>Explore diplomacy, debate and global affairs.</p>
+            <details>
+                <summary>More information</summary>
+                <p>Learn about discussions, negotiation
+                and simulated United Nations sessions.</p>
+            </details>
+        </div>
+
+        <div class="card" data-cat="Sports">
+            <h2>Sports</h2>
+            <p class="category">Sports</p>
+            <p>Explore sports activities and athletic participation.</p>
+            <details>
+                <summary>More information</summary>
+                <p>Check official announcements for available
+                sports and team activities.</p>
+            </details>
+        </div>
+
+    </div>
+
+    <p id="empty" class="hide">No clubs found.</p>
+
+    <footer>
+        <p>VIT Pune | Campus Clubs Directory</p>
+        <p>
+            <a href="https://www.instagram.com/vit_clubs/"
+               target="_blank" rel="noopener noreferrer">
+                Visit VIT Clubs on Instagram
+            </a>
+        </p>
+    </footer>
+
+    <script>
+        let category = "All";
+
+        function showClubs(selectedCategory) {
+            category = selectedCategory;
+            filterClubs();
+        }
+
+        function filterClubs() {
+            let cards = document.querySelectorAll(".card");
+            let search = document.getElementById("search")
+                               .value.toLowerCase();
+            let found = 0;
+
+            cards.forEach(function(card) {
+                let name = card.textContent.toLowerCase();
+                let type = card.dataset.cat;
+
+                if ((category == "All" || type == category)
+                    && name.includes(search)) {
+                    card.classList.remove("hide");
+                    found++;
+                } else {
+                    card.classList.add("hide");
+                }
+            });
+
+            document.getElementById("empty")
+                .classList.toggle("hide", found > 0);
+        }
+
+        document.getElementById("search")
+            .addEventListener("input", filterClubs);
+
+    </script>
+
+</body>
+</html>
